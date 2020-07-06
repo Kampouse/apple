@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start" : "node backend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.20",
+    "proxy" : "localhost:4000"
+  },
+  "devDependencies": {},
+  "description": ""
+}
