@@ -10,30 +10,26 @@ import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 function App() {
   const [state,dispatch] = useContext(StoreContext)
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => axios.post( "http://localhost:4000/api/help",{name:data.name,year:data.year,avaible:true}).then((response) => { console.log(response)})
+  const onSubmit = (data) => axios.post( "http://localhost:4000/api/book/update",{name:data.name,year:data.year,avaible:true}).then((response) => { console.log(response)})
 
-  return (
-    <Router>
+ return (
+<Router>
      
     
     <div className="App">
-    <button onClick = { () => {  axios.post( "http://localhost:4000/api/help",{name:"dog",year:"2001",avaible:true}).then((response)=>{console.log(response)})}}>hi</button>
+    <button onClick = { () => {  axios.get( "http://localhost:4000/api/book/get",{name:"dog",year:"2001",avaible:true}).then((response)=>{console.log(response)})}}>hi</button>
     <Route  exact path="/">
 
     </Route>
       <Navigation />
       <Switch>
       <form onSubmit={handleSubmit(onSubmit)}>
- 
-
-    
-      <input name="name" defaultValue="test" ref={register} />
-      <input name="year" defaultValue="year" ref={register} />
-    
-      <input type="submit" />
+    		<input name="name" defaultValue="test" ref={register} />
+      		<input name="year" defaultValue="year" ref={register} />
+      		<input type="submit" />
     </form>
       
-      <Route path={"/Apple/:state"}  component={ShowCase}/> 
+	<Route path={"/Apple/:state"}  component={ShowCase}/> 
       
       
     
@@ -42,7 +38,7 @@ function App() {
     </div>
 
     
-    </Router>
+</Router>
   );
 }
 
